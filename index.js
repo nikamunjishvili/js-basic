@@ -1,3 +1,5 @@
+/** @format */
+
 // /** @format */
 
 // // es5 is old version
@@ -354,7 +356,6 @@
 //     console.log(users);
 // }
 
-
 // function findUserById(id){
 //     return users.find(user => user.id === id);
 // }
@@ -362,7 +363,7 @@
 // // console.log(findUserById(4))
 
 // function updateUser(id, updateData){
-//     users = users.map(user => 
+//     users = users.map(user =>
 //         user.id === id ? {...user, ...updateData} : user
 //     )
 
@@ -375,7 +376,7 @@
 
 // function deleteUser(id = 1){
 //     const findUser = users.some(user => user.id === id);
-    
+
 //     if(findUser){
 //         users = users.filter(user => user.id !== id);
 //         return "User deleted successfylly"
@@ -387,3 +388,123 @@
 // deleteUser(3);
 
 // readUser()
+
+// დავალება 1: map + filter მეთოდები
+// დავალება:
+// მოცემულია users მასივი, რომელიც შეიცავს მომხმარებელთა ინფორმაციას.
+
+// დაამატეთ ახალი ველი fullName, რომელიც შედგება firstName + lastName-სგან.
+// გაფილტრეთ მხოლოდ ისინი, რომელთა ასაკი 25-ზე მეტია.
+
+const users = [
+  { firstName: "Nika", lastName: "Giorgadze", age: 23 },
+  { firstName: "Ana", lastName: "Beridze", age: 28 },
+  { firstName: "Luka", lastName: "Davitashvili", age: 30 },
+  { firstName: "Tako", lastName: "Gelashvili", age: 20 },
+];
+
+const transformedUser = users
+  .map((user) => ({
+    ...user,
+    fullName: `${user.firstName} ${user.lastName}`,
+  }))
+  .filter((user) => user.age > 25);
+
+// console.log(transformedUser);
+
+// დავალება 2: reduce (ობიექტებში იტერაცია)
+// დავალება:
+// მოცემულია პროდუქტების სია. გამოითვალეთ კატეგორიების მიხედვით ფასების ჯამი.
+
+const products = [
+  { name: "Laptop", category: "Electronics", price: 1200 },
+  { name: "Headphones", category: "Electronics", price: 200 },
+  { name: "Shoes", category: "Fashion", price: 100 },
+  { name: "T-Shirt", category: "Fashion", price: 50 },
+  { name: "Phone", category: "Electronics", price: 900 },
+];
+
+const totalByCategory = products.reduce((acc, product) => {
+  acc[product.category] = (acc[product.category] || 0) + product.price;
+  return acc;
+}, {});
+
+// console.log(totalByCategory);
+
+// დავალება 4: find + some (ობიექტების მოძებნა და შემოწმება)
+// დავალება:
+// მოცემულია შეკვეთების სია.
+
+// იპოვეთ პირველი შეკვეთა, რომელიც shipped სტატუსშია.
+// შეამოწმეთ, თუ ყველა შეკვეთა delivered სტატუსშია.
+
+// const orders = [
+//   { id: 101, status: "pending" },
+//   { id: 102, status: "shipped" },
+//   { id: 103, status: "delivered" },
+//   { id: 104, status: "pending" },
+// ];
+
+// const firstShippedStatus = orders.find((order) => order.status === "shipped");
+
+// console.log(firstShippedStatus);
+
+// const allDelivered = orders.every((order) => order.status === "delivered");
+
+// console.log(allDelivered);
+
+// es5
+
+// function getHello() {
+//   // function body
+//   console.log("Hello My Name is Nick!");
+// }
+
+// getHello();
+
+// es6
+// arrow function
+
+// const getFullName = (name, lastName = "munjishvili") => {
+//   // function body
+//   return `${name} ${lastName}`;
+// };
+
+// const result = getFullName("nika");
+// console.log(result);
+
+// const add = (a, b = 2) => {
+//   return a + b;
+// };
+
+// let result = add(3, 5);
+// console.log(result);
+
+// const myName = (name) => {
+//   console.log(name);
+// };
+
+// const getName = (callBackFunction) => {
+//   return callBackFunction("Nika");
+// };
+
+// const result = getName(myName);
+
+//1. პარამეტრი არის რასაც ვატან ფუნქციის ფრჩხილებში შექმნის დროს ანუ
+// აქ ().მაგალითად (a,b,c) არის პარამეტრები;
+
+// 2.არგუმენტი არის რასაც ვიღებ ამ პარამეტრების შესაბამისად.
+// მაგალითად (1,2,3);
+
+// 3.callBack ფუნქცია არის ისეთი ფუნქცია რომელიც პარამეტრად იღებს
+// სხვა ფუნქციას
+
+// function ragaca(number, number2) {
+//   console.log(number + number2);
+// }
+
+// function add(sxvaFunction) {
+//   return sxvaFunction(4, 2);
+// }
+
+// add(ragaca);
