@@ -636,31 +636,285 @@
 //   console.log(names);
 // }
 
+// // x = 10;
 
-// x = 10;
+// // // const x;
+// // console.log(x);
 
-// // const x;
-// console.log(x);
+// // console.log(window.document.body);
 
+// // const heading = document.getElementById("heading");
+// // heading.style.color = "red";
+// // console.log(heading);
 
-// console.log(window.document.body);
+// // const button = document.querySelectorAll("#buttons");
 
-// const heading = document.getElementById("heading");
-// heading.style.color = "red";
-// console.log(heading);
+// // button.forEach((btn, index) => {
+// //   btn.addEventListener("click", function(){
+// //     console.log(btn.textContent);
+// //   })
+// // })
 
-// const button = document.querySelectorAll("#buttons");
+// // const text = document.getElementById("desc");
 
-// button.forEach((btn, index) => {
-//   btn.addEventListener("click", function(){
-//     console.log(btn.textContent);
-//   })
+// // console.log(text.textContent)
+
+// import {Button} from './components/index.js'
+// Button("Register", "blue", "10px", "10px");
+// Button("Delete", "red", "10px", "10px");
+
+// const button = document.getElementById("signup");
+// btn.forEach((element) => {
+//   element.style.color = "red";
+// });
+
+// btn[0].style.color = 'red'
+// btn[1].style.color = 'red'
+
+// const buttons = document.querySelectorAll("#buttons");
+// const content = document.getElementById("content");
+// const btn_container = document.getElementById("btn_container");
+
+// buttons.forEach((element) => {
+//   element.addEventListener("click", () => {
+//     btn_container.style.display = "none";
+//     content.innerHTML = `You Checked ${element.textContent}`;
+//     content.style.display = "block";
+//   });
+// });
+
+// const button = document.createElement("button");
+// button.textContent = "Register";
+
+// button.classList.add("btn");
+
+// if (button.classList.contains("დსდსდსდ")) {
+//   console.log("აქვს კლასი");
+// } else {
+//   console.log("არანაირი კლასი არ აქვს ელემენტს!");
+// }
+
+// console.log(button.classList.remove("btn"));
+
+// console.log(button);
+
+// document.body.appendChild(button);
+
+// const darkModeBtn = document.getElementById("darkModeBtn");
+
+// darkModeBtn.addEventListener("click", () => {
+//   document.body.classList.toggle("dark");
+//   if (darkModeBtn.textContent === "dark") {
+//     darkModeBtn.textContent = "light";
+//   } else {
+//     darkModeBtn.textContent = "dark";
+//   }
+// });
+
+// darkModeBtn.remove()
+
+// document.body.innerHTML = "<input />"
+// document.body.innerText = "hello world"
+
+// console.log(darkModeBtn.textContent)
+
+// console.log(darkModeBtn.getAttribute('type'))
+// console.log(darkModeBtn.removeAttribute('type'))
+// console.log(darkModeBtn.setAttribute("type", "submit"))
+// console.log(darkModeBtn.getAttribute('type'))
+
+// console.log(darkModeBtn.id = 'submit')
+
+// console.log(document.anchors.length)
+
+// const parent = document.getElementById("parent");
+// const child = document.getElementById("child");
+
+// const result = parent.removeChild(child);
+
+// document.write('hello')
+
+// const submit = document.getElementById("submit");
+// const username = document.getElementById("username");
+
+// console.log(username.value);
+
+// submit.addEventListener("click", () => {
+//   //   localStorage.setItem("user", username.value);
+//   //   console.log(localStorage.getItem("user"));
+//   //   localStorage.removeItem("user");
+//   // localStorage.clear();
+//   //   sessionStorage.setItem("user", username.value);
+// });
+
+// const georgiaTime = new Date();
+// georgiaTime.setUTCHours(georgiaTime.getUTCHours() + 4);
+
+// const insertCookie =
+//   (document.cookie = `currentTime=${georgiaTime.toISOString()}; expires=${georgiaTime.toISOString()}`);
+
+//   console.log('insertCookie',insertCookie)
+
+// function firstFunction() {
+//   console.log("პირველი");
+// }
+
+// firstFunction();
+
+// function secondFunction() {
+//   console.log("მეორე");
+// }
+
+// setTimeout(() => {
+//   secondFunction();
+// }, 4000);
+
+// function thirdFunction() {
+//   console.log("მესამე");
+// }
+
+// setTimeout(() => {
+//   thirdFunction();
+// }, 3000);
+
+// const firstPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     let success = true;
+//     if (success) {
+//       resolve("ოპერაცია წარმატებით დასრულდა");
+//     } else {
+//       reject("დაფიქსირდა შეცდომა!");
+//     }
+//   }, 2000);
+// });
+
+// firstPromise
+// .then((res) => {
+//   console.log(res);
+// })
+// .catch(err => {
+//   console.log(err);
+// })
+// .finally(() => {
+//   console.log("resalt")
 // })
 
-// const text = document.getElementById("desc");
+// const fetchData = new Promise((resolve, reject) => {
+//   let success = true;
 
-// console.log(text.textContent)
+//   setTimeout(() => {
+//     if (!success) {
+//       resolve([{ id: 1, userName: "nika", email: "nika@gmail.com" }]);
+//     } else {
+//       reject("User Not Found!");
+//     }
+//   }, 3000);
+// });
 
-import {Button} from './components/index.js'
-Button("Register", "blue", "10px", "10px");
-Button("Delete", "red", "10px", "10px");
+// fetchData.then(data => {
+//   console.log(data)
+// })
+// .catch(err => {
+//   console.log(err);
+// })
+// .finally(() => {
+//   console.log("ოპერაცია დასრულდა!")
+// })
+
+// const getUser = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve({ id: 1, name: "Giorgi" });
+//     }, 1000);
+//   });
+// };
+
+// const getOrders = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(["Order 1", "Order 2", "Order 3"]);
+//     }, 1000);
+//   });
+// };
+
+// getUser()
+// .then(user => {
+//   console.log("მომხმარებელი", user);
+//   return getOrders(user.id);
+// })
+// .then(orders => {
+//   console.log("მომხმარებლის შეკვეთები", orders)
+// })
+// .catch(err => {
+//   console.log("შეცდომა: ", err);
+// })
+
+// Promise.all(), Promise.race(), Promise.allSettled(), Promise.any();
+
+// const first = new Promise((resolve, reject) =>
+//   setTimeout(() => reject("პირველი წარმატებული."), 1000)
+// );
+// const second = new Promise((resolve) =>
+//   setTimeout(() => resolve("მეორე წარმატებული."), 2000)
+// );
+// const third = new Promise((resolve) =>
+//   setTimeout(() => resolve("მესამე წარმატებული."), 1500)
+// );
+
+// Promise.allSettled([first, second, third])
+//   .then((results) => {
+//     console.log(results);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// Promise.race([first, second, third])
+//   .then((results) => {
+//     console.log(results);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// Promise.all([first, second, third])
+// .then(results => {
+//   console.log(results);
+// })
+// .catch(err => {
+//   console.log(err);
+// })
+
+// const p1 = new Promise((resolve, reject) =>
+//   setTimeout(() => reject("პირველი შეცდომა"), 1000)
+// );
+
+// const p2 = new Promise((resolve, reject) =>
+//   setTimeout(() => resolve("მეორე წარმატებული"), 3000)
+// );
+
+// Promise.any([p1, p2])
+// .then(result => {
+//   console.log(result);
+// })
+
+// async/await
+
+const fetchData = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject("მოხდა შეცდომა!");
+    }, 2000);
+  });
+};
+
+const getData = async () => {
+  try {
+    const data = await fetchData();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+getData()
